@@ -22,6 +22,7 @@ func GetConfiguration() *Configuration {
 	//
 	configuration.BaseUrl = routes.BASE_URL
 	configuration.restClient = resty.New()
+	configuration.restClient.SetHeader("Content-Type", "application/json")
 	if configuration.IsDebug {
 		configuration.restClient.SetDebug(true)
 	}
