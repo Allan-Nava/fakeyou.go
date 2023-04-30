@@ -1,0 +1,4 @@
+github.com/Paxx-RnD/go-helper v1.0.48 h1:euraZp0/6MCsSDNUgHAiRLW11xEsokjjzq8E+x6LqRo=
+github.com/Paxx-RnD/go-helper v1.0.48/go.mod h1:Ng47qyxnTvYB/dJMOa748CXzIgjOd3HLi+y5bqa8li8=
+github.com/caarlos0/env/v6 v6.10.1 h1:t1mPSxNpei6M5yAeu1qtRdPAK29Nbcf/n3G7x+b3/II=
+github.com/caarlos0/env/v6 v6.10.1/go.mod h1:hvp/ryKXKipEkcuYjs9mI4bBCg+UI0Yhgm5Zu0ddvwc=
