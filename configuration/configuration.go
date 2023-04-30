@@ -1,9 +1,16 @@
 package configuration
 
-import "github.com/caarlos0/env/v6"
+import (
+	"github.com/caarlos0/env/v6"
+	"github.com/go-resty/resty/v2"
+
+	"github.com/Allan-Nava/fakeyou.go/constants/routes"
+)
 
 type Configuration struct {
-	IsDebug bool `env:"IS_DEBUG"`
+	IsDebug    bool `env:"IS_DEBUG"`
+	BaseUrl    string
+	restClient *resty.Client
 }
 
 func GetConfiguration() *Configuration {
@@ -12,5 +19,12 @@ func GetConfiguration() *Configuration {
 	if err != nil {
 		panic("failed to read configuration")
 	}
+	//
+	configuration.BaseUrl = routes.BASE_URL
+	configuration.restClient = resty.New()
+	if configuration.IsDebug {
+		configuration.restClient.SetDebug(true)
+	}
+	//
 	return &configuration
 }
