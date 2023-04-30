@@ -1,12 +1,12 @@
-package ffmpeg
+package fakeyou
 
 type IBuilder interface {
 	Build() []string
 }
 
-type Builder ffmpeg
+/*type Builder fakeyou
 
 func (f *Builder) Build() []string {
 	var args []string
 	return args
-}
+}*/
