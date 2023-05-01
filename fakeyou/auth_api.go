@@ -33,7 +33,7 @@ func (f *fakeyou) Login(body RequestLogin) error {
 	}
 
 	log.Println("Processing the response (login)")
-	var obj ResponseLogin
+	var obj BaseResponse
 	if err := json.Unmarshal(resp.Body(), &obj); err != nil {
 		return err
 	}

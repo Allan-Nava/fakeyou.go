@@ -9,7 +9,7 @@ import (
 
 type IFakeYou interface {
 	// voice api
-	GetListOfVoices()
+	GetListOfVoices() (*ResponseVoice, error)
 	// auth api
 	Login(body RequestLogin) error
 }
