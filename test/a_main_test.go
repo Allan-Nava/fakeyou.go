@@ -1,6 +1,7 @@
 package test
 
 import (
+	"fmt"
 	"os"
 	"testing"
 
@@ -30,3 +31,7 @@ func GetFakeYou() fakeyou.IFakeYou {
 }
 
 //
+
+func PrintPanic(expected any, actual any) {
+	panic(fmt.Sprintf("\nexpected: \t%s\nactual: \t%s", expected, actual))
+}
