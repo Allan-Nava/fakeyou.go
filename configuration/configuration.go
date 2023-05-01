@@ -10,7 +10,7 @@ import (
 type Configuration struct {
 	IsDebug    bool `env:"IS_DEBUG"`
 	BaseUrl    string
-	restClient *resty.Client
+	RestClient *resty.Client
 }
 
 func GetConfiguration() *Configuration {
@@ -21,10 +21,10 @@ func GetConfiguration() *Configuration {
 	}
 	//
 	configuration.BaseUrl = routes.BASE_URL
-	configuration.restClient = resty.New()
-	configuration.restClient.SetHeader("Content-Type", "application/json")
+	configuration.RestClient = resty.New()
+	configuration.RestClient.SetHeader("Content-Type", "application/json")
 	if configuration.IsDebug {
-		configuration.restClient.SetDebug(true)
+		configuration.RestClient.SetDebug(true)
 	}
 	//
 	return &configuration

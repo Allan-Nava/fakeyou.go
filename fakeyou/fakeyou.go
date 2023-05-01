@@ -5,6 +5,7 @@ import (
 )
 
 type IFakeYou interface {
+	GetListOfVoices()
 }
 
 type fakeyou struct {
