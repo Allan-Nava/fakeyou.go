@@ -1,6 +1,7 @@
 package fakeyou
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 
@@ -28,9 +29,18 @@ func (f *fakeyou) Login(body RequestLogin) error {
 	if resp.IsError() {
 		//login error
 		//return fmt.Errorf( resp.RawResponse.)
+		return fmt.Errorf("")
 	}
 
 	log.Println("Processing the response (login)")
+	var obj ResponseLogin
+	if err := json.Unmarshal(resp.Body(), &obj); err != nil {
+		return err
+	}
+	//
+	if !obj.Success {
+		return fmt.Errorf("Login failed")
+	}
 
 	return nil
 }
