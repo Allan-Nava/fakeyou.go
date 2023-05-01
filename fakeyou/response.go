@@ -53,6 +53,6 @@ const (
 )
 
 type ResponseVoice struct {
-	Success BaseResponse
-	Models  []Model `json:"models"`
+	BaseResponse
+	Models []Model `json:"models"`
 }
