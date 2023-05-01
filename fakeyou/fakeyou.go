@@ -8,7 +8,10 @@ import (
 )
 
 type IFakeYou interface {
+	// voice api
 	GetListOfVoices()
+	// auth api
+	Login(body RequestLogin) error
 }
 
 type fakeyou struct {
