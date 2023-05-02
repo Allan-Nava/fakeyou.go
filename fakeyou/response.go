@@ -52,6 +52,29 @@ const (
 	Tacotron2 TTSModelType = "tacotron2"
 )
 
+type ModelType string
+
+const (
+	TTS ModelType = "tts"
+)
+
+type Category struct {
+	CategoryToken           string    `json:"category_token"`
+	MaybeSuperCategoryToken *string   `json:"maybe_super_category_token"`
+	ModelType               ModelType `json:"model_type"`
+	Name                    string    `json:"name"`
+	NameForDropdown         string    `json:"name_for_dropdown"`
+	CanDirectlyHaveModels   bool      `json:"can_directly_have_models"`
+	CanHaveSubcategories    bool      `json:"can_have_subcategories"`
+	CanOnlyModsApply        bool      `json:"can_only_mods_apply"`
+	IsModApproved           *bool     `json:"is_mod_approved"`
+	IsSynthetic             bool      `json:"is_synthetic"`
+	ShouldBeSorted          bool      `json:"should_be_sorted"`
+	CreatedAt               string    `json:"created_at"`
+	UpdatedAt               string    `json:"updated_at"`
+	DeletedAt               string    `json:"deleted_at"`
+}
+
 type ResponseVoice struct {
 	BaseResponse
 	Models []Model `json:"models"`
@@ -59,5 +82,5 @@ type ResponseVoice struct {
 
 type ResponseVoiceCategories struct {
 	BaseResponse
-	//Categories
+	Categories []Category `json:"categories"`
 }
