@@ -31,8 +31,7 @@ jobs:
           GOOS: linux
           EXTRA_FILES: "LICENSE"
           CMD_PATH: ""
-          BUILD_ARGS: "-o sprite-preview"
-          PROJECT_NAME: "sprite-preview"
+          PROJECT_NAME: "fakeyou.go"
   release-linux-arm:
     name: release linux/386
     permissions: write-all
