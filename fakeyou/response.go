@@ -75,6 +75,28 @@ type Category struct {
 	DeletedAt               string    `json:"deleted_at"`
 }
 
+type StateStatus string
+
+const (
+	Pending    			StateStatus = "pending"
+	Started    			StateStatus = "started"
+	CompleteSuccess  	StateStatus = "complete_success"
+	AtttemptFailed  	StateStatus = "attempt_failed"
+)
+
+type StateStatusType string
+
+type StateTTS struct {
+	JobToken string `json:"job_token"`
+	Status StateStatusType  `json:"status`
+
+	CreatedAt               string    `json:"created_at"`
+	UpdatedAt               string    `json:"updated_at"`
+	DeletedAt               string    `json:"deleted_at"`
+}
+
+
+
 type ResponseVoice struct {
 	BaseResponse
 	Models []Model `json:"models"`
@@ -88,4 +110,10 @@ type ResponseVoiceCategories struct {
 type ResponseGenerateTTS struct {
 	BaseResponse
 	InferenceJobToken string `json:"inference_job_token"`
+}
+
+
+type ResponsePollTTS struct {
+	BaseResponse
+	State StateTTS `json:"state"`
 }
