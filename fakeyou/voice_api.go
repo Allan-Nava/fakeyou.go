@@ -6,8 +6,8 @@ import (
 
 	"gopkg.in/validator.v2"
 
-	"github.com/google/uuid"
 	"github.com/Allan-Nava/fakeyou.go/constants/routes"
+	"github.com/google/uuid"
 )
 
 /*
@@ -59,9 +59,9 @@ For example, TM:7wbtjphx8h8v in the following examples is our Mario * voice. (A 
 func (f *fakeyou) GenerateTTSAudio(text string, ttsModelToken string) (*ResponseGenerateTTS, error) {
 	//
 	body := &RequestGenerateTTS{
-		TTSModelToken: ttsModelToken,
-		InferenceText: text,
-		UUIDIdempotencyToken:  uuid.New().String(),
+		TTSModelToken:        ttsModelToken,
+		InferenceText:        text,
+		UUIDIdempotencyToken: uuid.New().String(),
 	}
 	if errs := validator.Validate(body); errs != nil {
 		// values not valid, deal with errors here
@@ -78,7 +78,6 @@ func (f *fakeyou) GenerateTTSAudio(text string, ttsModelToken string) (*Response
 	return nil, fmt.Errorf("")
 }
 
-
 /*
 Poll TTS request status
 Once you've submitted your TTS request, you'll want to poll for completion using the inference_job_token.
@@ -86,5 +85,5 @@ Once you've submitted your TTS request, you'll want to poll for completion using
 
 func (f *fakeyou) PollTTSRequest(InferenceJobToken string) (*ResponsePollTTS, error) {
 	//
-	return nil,nil
+	return nil, nil
 }
