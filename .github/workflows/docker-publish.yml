@@ -1,8 +1,8 @@
 name: 'docker-publish'
-on:
-  push:
-    #branches: [ main ]
-    tags: [ v* ]
+#on:
+#  push:
+#    #branches: [ main ]
+#    tags: [ v* ]
 jobs:
   docker:
     name: 'docker-build-and-push'
