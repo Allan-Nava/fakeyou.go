@@ -56,3 +56,8 @@ type ResponseVoice struct {
 	BaseResponse
 	Models []Model `json:"models"`
 }
+
+type ResponseVoiceCategories struct {
+	BaseResponse
+	//Categories
+}

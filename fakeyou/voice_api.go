@@ -24,3 +24,21 @@ func (f *fakeyou) GetListOfVoices() (*ResponseVoice, error) {
 	}
 	return &obj, nil
 }
+
+/*
+Get a list of voice categories
+To download a list of voice categories (useful for building a voice search dropdown), use the following API:
+*/
+
+func (f *fakeyou) GetListOfVoiceCategories() (*ResponseVoiceCategories, error) {
+
+	resp, err := f.restyGet(routes.CATEGORY_LIST_VOICES_TTS, nil)
+	if err != nil {
+		return nil, err
+	}
+	var obj ResponseVoiceCategories
+	if err := json.Unmarshal(resp.Body(), &obj); err != nil {
+		return nil, err
+	}
+	return &obj, nil
+}

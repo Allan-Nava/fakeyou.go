@@ -10,6 +10,7 @@ import (
 type IFakeYou interface {
 	// voice api
 	GetListOfVoices() (*ResponseVoice, error)
+	GetListOfVoiceCategories() (*ResponseVoiceCategories, error)
 	// auth api
 	Login(body RequestLogin) error
 }
