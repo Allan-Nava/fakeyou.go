@@ -84,3 +84,8 @@ type ResponseVoiceCategories struct {
 	BaseResponse
 	Categories []Category `json:"categories"`
 }
+
+type ResponseGenerateTTS struct {
+	BaseResponse
+	InferenceJobToken string `json:"inference_job_token"`
+}

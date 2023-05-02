@@ -11,6 +11,7 @@ type IFakeYou interface {
 	// voice api
 	GetListOfVoices() (*ResponseVoice, error)
 	GetListOfVoiceCategories() (*ResponseVoiceCategories, error)
+	GenerateTTSAudio(text string, ttsModelToken string) (*ResponseGenerateTTS, error)
 	// auth api
 	Login(body RequestLogin) error
 }

@@ -2,6 +2,9 @@ package fakeyou
 
 import (
 	"encoding/json"
+	"fmt"
+
+	"gopkg.in/validator.v2"
 
 	"github.com/Allan-Nava/fakeyou.go/constants/routes"
 )
@@ -41,4 +44,35 @@ func (f *fakeyou) GetListOfVoiceCategories() (*ResponseVoiceCategories, error) {
 		return nil, err
 	}
 	return &obj, nil
+}
+
+/*
+
+Generate TTS Audio
+Make a TTS request
+To turn text into speech with your desired voice, you'll need to find the appropriate TTS model token from the model lookup API.
+
+For example, TM:7wbtjphx8h8v in the following examples is our Mario * voice. (A paid voice actor that we hired to impersonate Mario).
+*/
+
+func (f *fakeyou) GenerateTTSAudio(text string, ttsModelToken string) (*ResponseGenerateTTS, error) {
+	//
+	body := &RequestGenerateTTS{
+		TTSModelToken: ttsModelToken,
+		InferenceText: text,
+		//UUIDIdempotencyToken: uuid,
+	}
+	if errs := validator.Validate(body); errs != nil {
+		// values not valid, deal with errors here
+		return nil, errs
+	}
+	//
+	resp, err := f.restyPost(routes.LOGIN, body)
+	if err != nil {
+		return nil, err
+	}
+	if resp.StatusCode() == 429 {
+		return nil, fmt.Errorf("IP IS BANNED (caused by login request)")
+	}
+	return nil, fmt.Errorf("")
 }
