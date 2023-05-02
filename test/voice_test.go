@@ -13,3 +13,12 @@ func Test_ListVoices(t *testing.T) {
 	}
 	log.Println("resp", resp)
 }
+
+func Test_ListVoiceCategories(t *testing.T) {
+	f := GetFakeYou()
+	resp, err := f.GetListOfVoiceCategories()
+	if err != nil {
+		panic(err)
+	}
+	log.Println("resp", resp)
+}
