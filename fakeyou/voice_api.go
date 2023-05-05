@@ -85,5 +85,12 @@ Once you've submitted your TTS request, you'll want to poll for completion using
 
 func (f *fakeyou) PollTTSRequest(InferenceJobToken string) (*ResponsePollTTS, error) {
 	//
+	for {
+		resp, err := f.restyGet(fmt.Sprintf(routes.POLL_TTS_REQUEST, InferenceJobToken), nil)
+		if err != nil {
+			return nil, err
+		}
+		log.Println("resp ", resp)
+	} 
 	return nil, nil
 }
