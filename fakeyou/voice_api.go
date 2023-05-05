@@ -91,6 +91,9 @@ func (f *fakeyou) PollTTSRequest(InferenceJobToken string) (*ResponsePollTTS, er
 		if err != nil {
 			return nil, err
 		}
+		if resp.StatusCode() == 429 {
+			return nil, fmt.Errorf("IP IS BANNED (caused by login request)")
+		}
 		log.Println("resp ", resp)
 	} 
 	return nil, nil
