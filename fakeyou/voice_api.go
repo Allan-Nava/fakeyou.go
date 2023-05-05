@@ -96,5 +96,4 @@ func (f *fakeyou) PollTTSRequest(InferenceJobToken string) (*ResponsePollTTS, er
 		}
 		log.Println("resp ", resp)
 	} 
-	return nil, nil
 }
