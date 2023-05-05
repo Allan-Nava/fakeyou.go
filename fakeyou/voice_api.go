@@ -3,6 +3,7 @@ package fakeyou
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 
 	"gopkg.in/validator.v2"
 
