@@ -29,11 +29,6 @@ func (f *fakeyou) restyPost(url string, body interface{}) (*resty.Response, erro
 	if err != nil {
 		return nil, err
 	}
-	if !strings.Contains(resp.Status(), "200") {
-		err = fmt.Errorf("%v", resp)
-		//o.debugPrint(err)
-		return nil, err
-	}
 	return resp, nil
 }
 
@@ -43,11 +38,6 @@ func (o *fakeyou) restyGet(url string, queryParams map[string]string) (*resty.Re
 		Get(url)
 	//
 	if err != nil {
-		return nil, err
-	}
-	if !strings.Contains(resp.Status(), "200") {
-		err = fmt.Errorf("%v", resp)
-		//o.debugPrint(err)
 		return nil, err
 	}
 	return resp, nil
