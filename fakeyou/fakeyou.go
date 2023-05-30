@@ -15,6 +15,7 @@ type IFakeYou interface {
 	PollTTSRequest(InferenceJobToken string) (*ResponsePollTTS, error)
 	// auth api
 	Login(body RequestLogin) error
+	//
 }
 
 type fakeyou struct {
@@ -34,3 +35,4 @@ func NewFakeYou(configuration *configuration.Configuration) IFakeYou {
 	}
 	return fk
 }
+//
