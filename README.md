@@ -6,6 +6,12 @@ A powerful golang sdk library for interacting with the FakeYouAPI easily.
 FakeYou is a text to speech wonderland where all of your dreams come true.
 
 ## Features
+- login nor use your token
+- Search models
+- Make TTS requests
+- LeaderBoard
+- Edit client user
+- Get all data from an entity
 - Generate a speech wonderland where all of your dreams come true.
 - Customize the generated speech to fit your specific requirements.
 - Easy integration into your Go projects.
