@@ -18,7 +18,7 @@ To use fakeyou.go in your Go project, you need to install it first. You can do t
 go get -u github.com/Allan-Nava/fakeyou.go
 ```
 
-## Usage
+## Usage
 Here's a simple example demonstrating how to use fakeyou.go to generate fake data:
 
 
