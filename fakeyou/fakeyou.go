@@ -32,7 +32,7 @@ func NewFakeYou(configuration *configuration.Configuration) IFakeYou {
 	fk.restClient = resty.New()
 	fk.restClient.SetBaseURL(routes.BASE_URL)
 	fk.restClient.SetHeader("Content-Type", "application/json")
-	if configuration.IsDebug {
+	if configuration.isDebug {
 		fk.restClient.SetDebug(true)
 	}
 	return fk
