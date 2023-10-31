@@ -7,8 +7,8 @@ import (
 )
 
 type Configuration struct {
-	isDebug bool `env:"IS_DEBUG"`
-	baseUrl string
+	Debug bool `env:"IS_DEBUG"`
+	BaseUrl string
 	//RestClient *resty.Client
 }
 
