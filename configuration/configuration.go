@@ -19,7 +19,7 @@ func GetConfiguration() *Configuration {
 		panic("failed to read configuration")
 	}
 	//
-	configuration.baseUrl = routes.BASE_URL
+	configuration.BaseUrl = routes.BASE_URL
 	//
 	return &configuration
 }
