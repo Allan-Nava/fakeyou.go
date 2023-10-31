@@ -16,6 +16,11 @@ func (f *Builder) Build() []string {
 	return args
 }
 
+
+func (f *fakeyou) IsDebug() bool {
+	return f.configuration.IsDebug
+}
+
 // Resty Methods
 
 func (f *fakeyou) restyPost(url string, body interface{}) (*resty.Response, error) {

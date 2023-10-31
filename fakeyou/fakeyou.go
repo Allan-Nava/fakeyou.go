@@ -8,6 +8,8 @@ import (
 )
 
 type IFakeYou interface {
+	//
+	IsDebug() bool
 	// voice api
 	GetListOfVoices() (*ResponseVoice, error)
 	GetListOfVoiceCategories() (*ResponseVoiceCategories, error)

@@ -7,8 +7,8 @@ import (
 )
 
 type Configuration struct {
-	IsDebug bool `env:"IS_DEBUG"`
-	BaseUrl string
+	isDebug bool `env:"IS_DEBUG"`
+	baseUrl string
 	//RestClient *resty.Client
 }
 
@@ -19,7 +19,7 @@ func GetConfiguration() *Configuration {
 		panic("failed to read configuration")
 	}
 	//
-	configuration.BaseUrl = routes.BASE_URL
+	configuration.baseUrl = routes.BASE_URL
 	//
 	return &configuration
 }
