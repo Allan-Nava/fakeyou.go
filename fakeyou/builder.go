@@ -18,7 +18,8 @@ func (f *Builder) Build() []string {
 
 
 func (f *fakeyou) IsDebug() bool {
-	return f.configuration.isDebug
+	return false
+	//return f.configuration.isDebug
 }
 
 // Resty Methods
